@@ -1,11 +1,9 @@
 <script>
   var besok = prompt("몇감속으로 하시겠습니까? (소수로)");
-  alert('t키를 누르면 작업을 종료하겠습니다');
-  while (1){
-    if(event.keyCode == "t"){
-      break;
-    }
-    sleep(200/besok);
-    document.getElementById("entryEngineButtonMinimize entryPauseButtonMinimize").click();
+  var slow = prompt('몇번 실행하고 작업을 중단할까요? (천단위)');
+  for(var i = 0; i < slow*1000; i++){
+    setTimeout(() => {
+      document.getElementById("entryEngineButtonMinimize entryPauseButtonMinimize").click();  
+    }, 600/slow);
   }
 </script>
